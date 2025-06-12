@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='index.js') }}" defer></script>
+    <title>YouTube Converter</title>
+</head>
+<body>
+    <nav>
+    </nav>
+    <main>
+        <h1 class="title">YouTube to MP3 Converter</h1>
+        <div class="card">
+            <div class="inputs-wrapper">
+                <input id="url-input" type="text" placeholder="Enter youtube url...">
+                <button role="button" id="search-button">Search</button>
+            </div>
+            <span id="error"></span>
+            <div id="result" style="display: none;">
+                <div class="video-overview row">
+                    <img id="vo-thumbnail">
+                    <div>
+                        <h2 id="vo-title"></h2>
+                        <p id="vo-artist"></p>
+                        <p id="vo-album"></p>
+                        <div class="row">
+                            <span id="vo-views"></span>
+                            <span id="vo-likes"></span>
+                        </div>
+                    </div>
+                </div>
+                <img id="loading-indicator" src="{{ url_for('static', filename='loading.gif') }}" alt="Loading..." style="display: none;">
+                <div class="row cvt-dl-wrapper">
+                    <button id="convert-button" style="display: none;">Convert</button>
+                    <a id="download-button" style="display: none;">Download</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p class="credits">
+            <a href="https://github.com/ill-usion/youtube-converter" target="_blank">Github</a> 
+            &bullet; Made by 
+            <a href="https://github.com/ill-usion" target="_blank">ill-usion</a>
+        </p>
+    </footer>
+</body>
+</html>
